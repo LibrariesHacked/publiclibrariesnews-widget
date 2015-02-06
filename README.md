@@ -10,20 +10,22 @@ the data is collected from the PLN RSS feed (http://www.publiclibrariesnews.com/
 
 ## supporting technologies
 
-* geocoding using google maps geocoder (from within google script)
-* leaflet maps engine
-* cartodb map tiles to provide a retina black and white tile layer.
-* leaflet full screen plugin
+* geocoding using google maps geocoder (from within google script https://developers.google.com/apps-script/)
+* leaflet maps engine (http://leafletjs.com)
+* cartodb map tiles to provide a retina black and white tile layer. (http://cartodb.com/)
+* mapbox leaflet full screen plugin (https://www.mapbox.com/mapbox.js/example/v1.0.0/leaflet-fullscreen/) 
 
 ## how to embed
 
 embedding the map onto a site is simple.  the following code:
 
-note: to make use of the google fusion table API, a key is required.  these can be generated at http://... and allow for 25,000 requests per day.
+<div id="plnMap" data-items="100" data-height="250px"></div>
+<script src="http://www.librarieshacked.org/publiclibrariesnews-widget.js"></script>
+
+note: to make use of the google fusion table API, a key is required.  these can be generated at https://console.developers.google.com and allow for 25,000 requests per day.
 
 ## files
 
 * PublicLibrariesNewsDemo.htm - a demo page mockup of basic PLN layout, with map embedded.
 * publiclibrariesnews-widget.js - the script file referenced in the embed code.
-* GetPLNData.gs - the google script currently being run every hour.
-* http:// - the google fusion table showing existing library news stories
+* GetPLNData.js - the google script currently being run at timed intervals to update the datasets.

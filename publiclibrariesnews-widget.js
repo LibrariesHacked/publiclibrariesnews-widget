@@ -1,15 +1,20 @@
-var map;
-var changesMarkers = [];
-var newsMarkers = [];
+var map, changesMarkers = [], newsMarkers = [], overlays = {};
 var changesTable = '18RMAdHdkrRwUiUrE7ltKzTdFVjvYQLDGevlczxcm';
 var newsTable = '1juIutd8McD3OGnWHWVrZbyWPeLim9RZXvHRiKmFe';
-var overlays = {};
 
 jQuery(function () {
     // 3 required css files: standard leaflet, fullscreen plugin, and marker cluster style.
+    
+    // Leaflet CSS
     jQuery('head').append('<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />');
+    
+    // Leaflet fullscreen CSS
     jQuery('head').append('<link rel="stylesheet" href="https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v0.0.4/leaflet.fullscreen.css" />');
+    
+    // 
     jQuery('head').append('<link rel="stylesheet" href="https://cdn.rawgit.com/Leaflet/Leaflet.markercluster/master/dist/MarkerCluster.Default.css" />');
+    
+    
     jQuery('head').append('<style>.leaflet-popup-content-wrapper { border-radius: 0px !important; } .leaflet-popup-content { margin-top: 5px !important; margin-bottom: 5px !important; margin-left: 5px !important; margin-right: 5px !important; } </style>');
 
     // width is fixed to be 100% of the available container.
